@@ -1,0 +1,10 @@
+- name: Copy Telegraf script to /tmp
+  copy:
+    src: "{{ src_dir }}/files/telegraf.sh"
+    dest: /tmp/telegraf.sh
+    owner: root
+    group: root
+    mode: 766
+
+- name: Execute script to add repo
+  command: sh /tmp/telegraf.sh

@@ -1,0 +1,5 @@
+- name: Install Telegraf
+  apt:
+    update_cache: yes
+    name: telegraf
+    state: latest  

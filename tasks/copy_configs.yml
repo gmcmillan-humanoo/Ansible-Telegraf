@@ -1,0 +1,12 @@
+- name: Stop Telegraf service
+  service:
+    name: telegraf
+    state: stopped 
+
+- name: Copy Telegraf config
+  copy:
+    src: "{{ src_dir }}/files/telegraf.conf"
+    dest: /etc/telegraf/telegraf.conf
+    owner: root
+    group: root
+    mode: 644

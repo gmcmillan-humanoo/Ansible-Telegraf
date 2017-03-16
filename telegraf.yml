@@ -1,0 +1,14 @@
+--- # Playbook to add Telegraf repository, install and copy config for Telegraf
+
+- hosts: prelive
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars_files:
+  - variables/telegraf_vars.yml
+  tasks:
+    - include: tasks/repoadd.yml
+    - include: tasks/install_telegraf.yml
+    - include: tasks/copy_configs.yml
